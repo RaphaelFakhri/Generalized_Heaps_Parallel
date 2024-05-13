@@ -74,7 +74,7 @@ std::cout << "GPU insertions Execution time : \t" << timeElapsedInsertGPU << " m
 
 std::clock_t cStartDeleteGPU = std::clock();
 for (int i = 0; i < n; i++) {
-    deleteKeys(d_arrRec + i * BATCH_SIZE, n * BATCH_SIZE / 2);
+    deleteKeys(d_arrRec + i * BATCH_SIZE);
 }
 cudaDeviceSynchronize();
 std::clock_t cEndDeleteGPU = std::clock();
